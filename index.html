@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Quill CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-brain"></i>
+            <span>Knowledge Hub</span>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search articles...">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+            <span>HS</span>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <aside>
+            <h2>Categories</h2>
+            <ul id="categories"></ul>
+            <button id="add-article-btn" class="btn btn-primary">Add Article</button>
+        </aside>
+        
+        <main>
+            <section id="articles"></section>
+        </main>
+    </div>
+    
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add/Edit Article</h2>
+            <form id="article-form">
+                <input type="hidden" id="article-id">
+                <input type="text" id="article-title" placeholder="Title" required>
+                <input type="text" id="article-category" placeholder="Category" required>
+                <div id="article-content" style="height: 450px;" required></div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Article</button>
+                    <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 HS All rights reserved.</p>
+    </footer>
+
+    <!-- Quill JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

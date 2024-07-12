@@ -1,0 +1,255 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --light-gray: #bdc3c7;
+    --danger-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.search-container {
+    position: relative;
+    width: 40%;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-container i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-gray);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.user-info i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+span{
+    font-size: 0.8em;
+}
+
+aside {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+main {
+    flex: 3;
+}
+
+#categories {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+#categories li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#categories li:hover {
+    background-color: var(--background-color);
+}
+
+.article {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.article h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.article-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: var(--text-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary:hover {
+    background-color: #95a5a6;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto; /* Center the modal with some margin */
+    padding: 20px;
+    width: 80vw; /* Cover 80% of the viewport width */
+    height: 80vh; /* Cover 80% of the viewport height */
+    max-width: 80vw; /* Ensure max-width matches the set width */
+    max-height: 80vh; /* Ensure max-height matches the set height */
+    border-radius: 10px; /* Slightly round corners */
+    overflow-y: auto; /* Add scroll if content exceeds height */
+}
+
+
+#article-form input,
+#article-form textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#article-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        width: 60%;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
